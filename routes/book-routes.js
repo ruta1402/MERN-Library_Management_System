@@ -1,9 +1,10 @@
 const express = require("express");
-const Book = require("../model/Book");
+
 const router = express.Router();
 const Book = require("../model/Book");
 
-router.get("/", async(rq, res, next) => {
+
+router.get("/", async(req, res, next) => {
     //This route will give all books
     let books;
     try {
