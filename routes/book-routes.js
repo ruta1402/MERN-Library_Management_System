@@ -1,7 +1,7 @@
 const express = require("express");
 const Book = require("../model/Book");
 const router = express.Router();
-const Product = require("../model/Book");
+const Book = require("../model/Book");
 
 router.get("/", async(rq, res, next) => {
     //This route will give all books
