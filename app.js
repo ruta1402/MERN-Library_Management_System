@@ -5,6 +5,8 @@ const router = require("./routes/book-routes")
 
 const app = express();
 
+require("dotenv").config();
+
 
 //Middleware
 app.use("./books", router);
