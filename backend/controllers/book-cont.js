@@ -1,12 +1,16 @@
 const Book = require("../model/book.js");
 
+const db = process.env.DB_NAME;
+const collection = process.env.BOOK_COLLECTION;
+
 //@description : Get Books
 //@route  : GET /books
 //@access : Private
 const getBooks = async(req, res) => {
     let books
     try {
-        books = await Book.find();
+        //books = await db.collection.find();
+        books = await book.find();
     } catch (err) {
         console.log(err);
     }
