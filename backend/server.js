@@ -12,5 +12,6 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/books', require('./routes/book-routes'))
-
+app.use('/books', require('./routes/issue-routes'))
+app.use('/books', require('./routes/user-routes'))
 app.listen(port, () => console.log("Server started listening on port " + port));
