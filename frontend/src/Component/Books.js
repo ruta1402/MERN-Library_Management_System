@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table } from 'reactstrap';
+import './style.css';
 
 const Books = () => {
   return(
@@ -16,6 +17,7 @@ const Books = () => {
             <th className='th2'>ISBN number</th>
             <th className='th2'>Authors</th>
             <th className='th2'>Copies available</th>
+            <th className='th2'>Issue Book</th>
         </tr>
         </thead>
         <tbody>
@@ -25,6 +27,7 @@ const Books = () => {
                 <td className='th2'>56282</td>
                 <td className='th2'>Myself</td>
                 <td className='th2'>4</td>
+                <td className='th2'><button type='submit' className="foote1">Issue</button></td>
             </tr>
             <tr>
                 <td className='th2'>2</td>
@@ -32,6 +35,7 @@ const Books = () => {
                 <td className='th2'>45468</td>
                 <td className='th2'>You</td>
                 <td className='th2'>10</td>
+                <td className='th2'><button type='submit' className="foote1">Issue</button></td>
             </tr>
         </tbody>
         </Table>
