@@ -19,7 +19,7 @@ function Log() {
                 <th className='th2'>Issue Date</th>
                 <th className='th2'> Return Deadline</th>
                 <th className='th2'>Return status</th> 
-                <th className='th2'>Return</th> 
+                <th className='th2'>Fine</th> 
             </tr>
             </thead>
             <tbody>
@@ -32,7 +32,7 @@ function Log() {
                     <td className='td2'>20-11-2022</td>
                     <td className='td2'>27-11-2022</td>
                     <td className='td2'>Pending</td>
-                    <td className='td2'><button type='submit' className="foote2">Return</button></td>
+                    <td className='td2'>0 Rs</td>
                 </tr>
                 <tr>
                     <td className='td2'>2</td>
@@ -43,7 +43,7 @@ function Log() {
                     <td className='td2'>20-11-2022</td>
                     <td className='td2'>27-11-2022</td>
                     <td className='td2'>Pending</td>
-                    <td className='td2'><button type='submit' className="foote2">Return</button></td>
+                    <td className='td2'>0 Rs</td>
                 </tr>
             </tbody>
             </Table>

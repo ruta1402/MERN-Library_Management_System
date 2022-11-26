@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table } from 'reactstrap';
+import './style.css';
 
 const History = () => {
   return (
@@ -17,7 +18,7 @@ const History = () => {
             <th className='th2'>Issue Date</th>
             <th className='th2'>Return Deadline</th>
             <th className='th2'>Return status</th> 
-            <th className='th2'>Fine (in Rs.)</th> 
+            <th className='th2'>Return</th> 
            </tr>
         </thead>
         <tbody>
@@ -28,7 +29,7 @@ const History = () => {
                 <td className='th2'>20-11-2022</td>
                 <td className='th2'>22-11-2022</td>
                 <td className='th2'>pending</td>
-                <td className='th2'>0 Rs</td>
+                <td className='th2'><button type='submit' className="foote2">Return</button></td>
             </tr>
             <tr>
                 <td className='th2'>2</td>
@@ -37,7 +38,7 @@ const History = () => {
                 <td className='th2'>20-11-2022</td>
                 <td className='th2'>22-11-2022</td>
                 <td className='th2'>pending</td>
-                <td className='th2'>0 Rs</td>
+                <td className='th2'><button type='submit' className="foote2">Return</button></td>
             </tr>
         </tbody>
         </Table>
