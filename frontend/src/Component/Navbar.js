@@ -12,7 +12,7 @@ return (
 			<NavLink to="/Profile" activeStyle>Profile</NavLink>
 			<NavLink to="/Addbook" activeStyle>Add Book</NavLink>
 			<NavLink to="/History" activeStyle>History</NavLink>
-			<NavLink to="/History" activeStyle>History</NavLink>
+			<NavLink to="/Form" activeStyle>Hist</NavLink>
 		</NavMenu>
 		<NavBtn>
           <NavBtnLink to='/Login'activeStyle>Login</NavBtnLink>

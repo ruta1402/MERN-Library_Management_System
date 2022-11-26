@@ -9,9 +9,7 @@ function Home() {
             <h1 align="center" style={{fontSize:"3rem"}}> Welcome to the KJSCE Library</h1>
             </div>
             <div className="row darkbg inner">          
-            <h6>
-            The Central Library of Indian Institute of Technology (Indian School of Mines) Dhanbad is the heart of the institute providing direct academic and research supports to all departments. The Central Library is an automated library in terms of records organisation and management of all its different sections, search and discovery, information retrieval and service delivery. The whole library operations run on LIBSYS integrated library management software.
-            </h6>
+            <h6>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam magnam qui fugit quas vero laboriosam quod et nobis facere. Placeat sit excepturi ex neque, voluptatum ratione eaque accusamus debitis temporibus! Labore necessitatibus adipisci mollitia quibusdam explicabo reprehenderit perferendis? Repellat, consequuntur officia? Optio autem dignissimos voluptatum at ipsam perspiciatis, sed magni!</h6>
             </div>
             <div className="row darkbg justify-content-center align-self-center">
             <br/>
