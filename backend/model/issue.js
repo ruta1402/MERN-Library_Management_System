@@ -20,6 +20,9 @@ const issueSchema = new Schema({
     issueDate:{
         type: Date
     },
+    dueDate:{
+        type: Date
+    },
     returnDate:{
         type: Date
     }
