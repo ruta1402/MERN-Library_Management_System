@@ -1,7 +1,27 @@
-import React from 'react';
+import React , { useEffect }  from 'react';
+import jwt from 'jsonwebtoken'
 import { Form,FormGroup,Row,Col,Label, Input, ListGroup } from 'reactstrap';
+import { useNavigate } from 'react-router-dom';
 
 function Search() {
+  const navigate = useNavigate();
+
+    useEffect(()=>{
+    const token = localStorage.getItem('token')
+    if(token){
+        const user = jwt.decode(token)
+        if(!user){
+            localStorage.removeItem('token')
+            navigate('/login')
+        }
+        else{
+            console.log(user);
+        }
+    }else{
+        navigate('/login')
+    }
+})
+
     return(
         
         <div className="container loading">

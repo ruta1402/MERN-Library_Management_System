@@ -1,24 +1,49 @@
-import React from 'react';
+import React , { useEffect }  from 'react';
+import { useNavigate } from 'react-router-dom';
+import jwt from 'jsonwebtoken'
 
 function Home() {
+
+
+    const navigate = useNavigate();
+
+    useEffect(()=>{
+    const token = localStorage.getItem('token')
+    if(token){
+        const user = jwt.decode(token)
+        if(!user){
+            localStorage.removeItem('token')
+            navigate('/login')
+        }
+        else{
+            
+        }
+    }else{
+        navigate('/login')
+    }
+})
+
     return(
         <>
           <div className="container mt-4 home text-center align-self-center">
         <br/><br/>
-            <div className="row mt-3 darkbg text-center justify-content-center ko">
-            <h1 align="center" style={{fontSize:"3rem"}}> Welcome to the KJSCE Library</h1>
+            <div>
+            <h1 className="Headline"align="center" style={{fontSize:"3rem", color:'white'}}> Welcome to Our Library</h1>
             </div>
-            <div className="row darkbg inner">          
-            <h6>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam magnam qui fugit quas vero laboriosam quod et nobis facere. Placeat sit excepturi ex neque, voluptatum ratione eaque accusamus debitis temporibus! Labore necessitatibus adipisci mollitia quibusdam explicabo reprehenderit perferendis? Repellat, consequuntur officia? Optio autem dignissimos voluptatum at ipsam perspiciatis, sed magni!</h6>
+            <div className='space'>          
+        
             </div>
-            <div className="row darkbg justify-content-center align-self-center">
+            <div className="row justify-content-center align-self-center">
             <br/>
             <table className='tabla'>
-                <tr> <th colspan="2">Library Timings</th> </tr>
-                <tr> <td>Opening Time </td> 
-                <td> 9.00 A.M.</td></tr>
-                <tr> <td>Closing Time </td> 
-                <td> 6.00 P.M.</td></tr>
+                <tbody>
+                <tr><th colSpan="2">Library Timings</th></tr>
+                <tr><td>Opening Time</td> 
+                <td>9.00 A.M.</td></tr>
+                <tr><td>Closing Time</td> 
+                <td>6.00 P.M.</td></tr>
+
+                </tbody>
             </table><br/>
                 </div>
                 <br/><br/><br/>

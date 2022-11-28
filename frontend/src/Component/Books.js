@@ -1,44 +1,73 @@
-import React from 'react';
+import React , { useEffect, useState }  from 'react';
+import jwt from 'jsonwebtoken'
+import { useNavigate } from 'react-router-dom';
 import { Table } from 'reactstrap';
-import './style.css';
+import Bk from './Bk';
+
 
 const Books = () => {
+
+    
+    const navigate = useNavigate();
+    const [bookData,setBookData] = useState([])
+    const [userId,SetUserId] =  useState(null)
+
+    const [query, setQuery] = useState(" ")
+
+    async function getBooks(){
+        
+    
+        const resp  = await fetch(`http://localhost:8989/book/${query}`)
+        const data =  await resp.json()
+        setBookData(data.books)
+        // const d = data.books;
+        // d.map(b=> console.log(b))
+    }
+    useEffect(()=>{
+        const token = localStorage.getItem('token')
+        if(token){
+            const user = jwt.decode(token)
+            if(!user){
+                localStorage.removeItem('token')
+                navigate('/login')
+            }
+            else{
+                console.log(user.user._id);
+                SetUserId(user.user._id)
+            }
+            
+        }else{
+            navigate('/login')
+        }
+        
+        
+    
+        },[])
+
+
+        useEffect(()=>{
+            getBooks()
+        },[query])
+        // console.log(bookData);
+        let i =0
+        const bookEle = bookData.map(book=>{
+            i+=1
+             return <Bk data = {book} key ={i} userid ={userId} />
+            
+            })
+    
   return(
     <div className='records'>
         <div className="container sma">
         <div className="row">
-            <div className="col-12">
+            <div className="col-12-book">
             <h3 align="center" className='headingss'>List of All books</h3>
-            <Table className='tab' striped bordered hover responsive>
-        <thead>
-        <tr>
-            <th className='th2'>S.No.</th>
-            <th className='th2'>Name of Book</th>
-            <th className='th2'>ISBN number</th>
-            <th className='th2'>Authors</th>
-            <th className='th2'>Copies available</th>
-            <th className='th2'>Issue Book</th>
-        </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className='th2'>1</td>
-                <td className='th2'>React</td>
-                <td className='th2'>56282</td>
-                <td className='th2'>Myself</td>
-                <td className='th2'>4</td>
-                <td className='th2'><button type='submit' className="foote1">Issue</button></td>
-            </tr>
-            <tr>
-                <td className='th2'>2</td>
-                <td className='th2'>Express</td>
-                <td className='th2'>45468</td>
-                <td className='th2'>You</td>
-                <td className='th2'>10</td>
-                <td className='th2'><button type='submit' className="foote1">Issue</button></td>
-            </tr>
-        </tbody>
-        </Table>
+            <div className="search">
+            <input className='search-bar' placeholder="Search Book" onChange={event => setQuery(event.target.value)} />
+            </div>
+            <div className="contacts">
+            {bookEle}   
+            </div>
             </div>
         </div>
     </div>

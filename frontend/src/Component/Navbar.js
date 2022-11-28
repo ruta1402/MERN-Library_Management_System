@@ -1,22 +1,82 @@
-import React from "react";
-import { Nav, NavLink, NavMenu,NavBtnLink, NavBtn } from "./NavbarElements";
+import React, { useContext, useEffect, useState } from "react";
+import { Nav, NavLink, NavMenu,NavBtnLink, NavBtn,UserData } from "./NavbarElements";
+import jwt from 'jsonwebtoken';
+import Context from "../store/Context";
+import { useNavigate } from 'react-router-dom';
+
 
 const Navbar = () => {
+	const {state,dispatch} = useContext(Context)
+	
+	const navigate = useNavigate();
+	const [admin, setAdmin] = useState(false)
+	const [username,setUser] = useState('')
+	
+	
+	console.log(state.name);
+	useEffect(()=>{
+		const token = localStorage.getItem('token')
+		
+		if(token){
+			
+			const userdata = jwt.decode(token)
+			if(!userdata){
+				localStorage.removeItem('token')
+				navigate('/login')
+			}
+			else{
+				setUser(userdata.user.name)
+				const fname = userdata.user.name.split(' ')[0]
+				dispatch({type:'UPDATE_NAME',payload:fname})
+				if(userdata.user.admin==true){
+					setAdmin(true)
+				}
+				// console.log(userdata.user.admin);
+			}
+			
+		}
+	},[localStorage.getItem('token')])
+
+	
+
+	function logOut(){
+		localStorage.clear()
+		navigate('/login')
+		window.location.reload()
+	}
+	
+
 return (
+	
 	<>
 	<Nav>
 		<NavMenu>
-			<NavLink className={"logo"} to="/" activeStyle>Bookie</NavLink>
-			<NavLink to="/Books" activeStyle>Books</NavLink>
-			<NavLink to="/UserDetails" activeStyle>User Details</NavLink>
-			<NavLink to="/Profile" activeStyle>Profile</NavLink>
-			<NavLink to="/Addbook" activeStyle>Add Book</NavLink>
-			<NavLink to="/History" activeStyle>History</NavLink>
-			<NavLink to="/Form" activeStyle>Hist</NavLink>
+			<NavLink className="logo" to="/" >Book Store</NavLink>
+			<NavLink to="/Books" >Books</NavLink>
+			<NavLink to="/UserDetails" >User Details</NavLink>
+			{admin?<>
+				<NavLink to="/Profile" >Profile</NavLink>
+				<NavLink to="/Addbook" >Add Book</NavLink>
+			</>:
+			<>
+			</>}
+			<NavLink to="/History" >History</NavLink>
+			
 		</NavMenu>
 		<NavBtn>
-          <NavBtnLink to='/Login'activeStyle>Login</NavBtnLink>
-		  <NavBtnLink to='/Register' activeStyle>Register</NavBtnLink>
+			{state.name?
+					<>
+					<UserData>{state.name}</UserData>
+					<button onClick={logOut}>
+						log out
+					</button>
+					</>
+				:
+					<>
+				<NavBtnLink to='/Login'>Login</NavBtnLink>
+				<NavBtnLink to='/Register' >Register</NavBtnLink>
+					</> 
+			}
         </NavBtn>
 	</Nav>
 	</>

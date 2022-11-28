@@ -1,11 +1,20 @@
+/* @import url("https://fonts.googleapis.com"); */
+/* @import url("https://fonts.googleapis.com"); */
+
+
 html{
   height: 100%;
   margin: 0;
 }
 .row-header{
-  margin:0px auto;
+  margin:0px auto;  
   padding:0px auto;
 } 
+.logo{
+   font-size: 30px;
+  margin: 0.5rem 2rem;
+  font-family: 'Patrick Hand', cursive;
+}
 
 body{
   width: 100vw;
@@ -16,6 +25,7 @@ body{
 .row-content {
   margin:0px auto;
   padding: 30px 0px 50px 0px;
+  
 }
 
 .footer{
@@ -50,7 +60,7 @@ table {
 }
 
 .headingss{
-  margin-left: 3rem;
+  /* margin-left: 3rem; */
   margin-top: 0rem;
   font-size: 2rem;
   font-weight: 800;
@@ -66,9 +76,10 @@ table {
   font-size: 2rem;
 }
 
-.logo{
+.Headline{
   font-size: 3rem;
   margin: 0.5rem 2rem;
+  font-family: 'Patrick Hand', cursive;
 }
 
 .dif{
@@ -84,11 +95,15 @@ table {
   border: 1px solid white;
   border-collapse: collapse;
   padding: 0.5rem;
+  color:white;
+  font-style: italic;
 } 
 .tabla td{
   border: 1px solid white;
   border-collapse: collapse;
   padding: 0.5rem;
+  color:white;
+  font-style: italic;
 }
 
 .cardwala{
@@ -120,6 +135,8 @@ table {
   background: linear-gradient(to right, #4a729b, #bdc3c7);
   margin-top: 0;
   padding: 1px;
+  padding-top: 45px;
+  min-height: 100vh;
 }
 
 .tab{
@@ -143,4 +160,7 @@ min-height: 100vh;
 
 .sma{
   margin: 3rem 0 3rem 3rem;
+}
+.space{
+  margin-bottom: 15%;
 }
