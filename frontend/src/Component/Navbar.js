@@ -3,6 +3,8 @@ import { Nav, NavLink, NavMenu,NavBtnLink, NavBtn,UserData } from "./NavbarEleme
 import jwt from 'jsonwebtoken';
 import Context from "../store/Context";
 import { useNavigate } from 'react-router-dom';
+import './style.css'
+import Button from 'react-bootstrap/Button';
 
 
 const Navbar = () => {
@@ -51,9 +53,9 @@ return (
 	<>
 	<Nav>
 		<NavMenu>
-			<NavLink className="logo" to="/" >Book Store</NavLink>
+			<NavLink className="logo" to="/" ><img src="./images/logo.png" width="100px" height="100px"/></NavLink>
 			<NavLink to="/Books" >Books</NavLink>
-			<NavLink to="/UserDetails" >User Details</NavLink>
+			<NavLink to="/UserDetails" >Profile </NavLink>
 			{admin?<>
 				<NavLink to="/Profile" >Profile</NavLink>
 				<NavLink to="/Addbook" >Add Book</NavLink>
@@ -73,14 +75,15 @@ return (
 					</>
 				:
 					<>
-				<NavBtnLink to='/Login'>Login</NavBtnLink>
-				<NavBtnLink to='/Register' >Register</NavBtnLink>
+				<NavBtnLink  to='/Login'>Login</NavBtnLink>
+				<NavBtnLink  to='/Register' >Register</NavBtnLink>
 					</> 
 			}
         </NavBtn>
 	</Nav>
 	</>
 );
+
 };
 
 export default Navbar;

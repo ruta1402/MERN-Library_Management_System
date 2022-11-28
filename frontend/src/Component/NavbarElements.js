@@ -2,9 +2,9 @@ import { FaBars } from "react-icons/fa";
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Nav = styled.nav`
-    background: rgb(2,0,36);
-	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);	
+export const Nav = styled.nav `
+    background: #f0fcfc;
+	
 	display: flex;
 	justify-content: space-end;
 	padding: 0.2rem;
@@ -13,8 +13,10 @@ export const Nav = styled.nav`
 	
 `;
 
-export const NavLink = styled(Link)`
-	color: white;
+export const NavLink = styled(Link)
+`
+	color: black;
+	font-family: 'Times New Roman', serif;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -28,7 +30,8 @@ export const NavLink = styled(Link)`
 	}
 `;
 
-export const Bars = styled(FaBars)`
+export const Bars = styled(FaBars)
+`
 	display: none;
 	color: #808080;
 	@media screen and (max-width: 768px) {
@@ -42,8 +45,9 @@ export const Bars = styled(FaBars)`
 	}
 `;
 
-export const UserData = styled.div`
+export const UserData = styled.div `
 color: white;
+font-family: 'Times New Roman', serif;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -58,7 +62,7 @@ color: white;
 	
 `;
 
-export const NavMenu = styled.div`
+export const NavMenu = styled.div `
 display: flex;
 align-items: center;
 justify-content: space-end;
@@ -68,7 +72,7 @@ margin-right: 24px;
 }
 `;
 
-export const NavBtn = styled.nav`
+export const NavBtn = styled.nav `
   display: flex;
   align-items: center;
   margin-right: 24px;
@@ -79,18 +83,31 @@ export const NavBtn = styled.nav`
   }
 `;
 
-export const NavBtnLink = styled(Link)`
+export const NavBtnLink = styled(Link)
+`
   border-radius: 4px;
   font-size: 18px;
-  background: #808080;
+  background: #225956;
+  font-family: 'Times New Roman', serif;
   color: white;
-  padding: 10px 22px;
-  transition: all 0.2s ease-in-out;
+  width:100px;
+  text-align:center;
+  
   text-decoration: none;
-  margin-left: 24px;
+  
   &:hover {
-    transition: all 0.4s ease-in-out;
-    background: #fff;
-    color: #808080;
+    color: white;
+  
+  box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+  background-color: rgba(104, 85, 224, 1);
   }
+  cursor: pointer;
+  border: 0;
+  
+  font-weight: 600;
+  margin: 0 10px;
+  
+  padding: 10px 0;
+  box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
+  transition: 0.4s;
 `;

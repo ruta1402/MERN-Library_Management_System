@@ -12,6 +12,7 @@ import History from './Component/History';
 import Search from './Component/Search';
 import RegistrationForm from './Component/Register';
 import LoginForm from './Component/Login';
+import Header from './Component/Header';
 import { Provider } from './store/Context';
 import { initialState, reducer } from './store/userReduce';
 
@@ -20,6 +21,7 @@ function App() {
 return (
 	<Provider value={{state,dispatch}}>
 	<Router>
+	
 	<Navbar />
 	<Routes>
 		<Route exact path='/' element={<Home />} />

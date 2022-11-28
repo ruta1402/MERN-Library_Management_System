@@ -1,8 +1,8 @@
 const Book = require("../model/book.js")
 
 // Api to get details of book in the database
-const getAllBooks =async (req,res,next)=>{
-    let books 
+const getAllBooks = async(req, res, next) => {
+    let books
     console.log("get allbooks");
     try {
         books = await Book.find();
@@ -10,22 +10,22 @@ const getAllBooks =async (req,res,next)=>{
     } catch (error) {
         console.log(error);
     }
-    if(!books){
-        return res.status(404).json({message:"No books found"})
+    if (!books) {
+        return res.status(404).json({ message: "No books found" })
     }
-    return res.status(200).json({books})
+    return res.status(200).json({ books })
 }
 
 // Api to search book by name, author and category
-const getbook =async (req,res,next)=>{
+const getbook = async(req, res, next) => {
     const id = req.params.id;
-    let books 
+    let books
     try {
         books = await Book.find({
-            "$or":[
-                {name:{$regex:id,$options:"i"}},
-                {author:{$regex:id,$options:"i"}},
-                {category:{$regex:id,$options:"i"}}
+            "$or": [
+                { name: { $regex: id, $options: "i" } },
+                { author: { $regex: id, $options: "i" } },
+                { category: { $regex: id, $options: "i" } }
 
             ]
         });
@@ -33,21 +33,21 @@ const getbook =async (req,res,next)=>{
     } catch (error) {
         console.log(error);
     }
-    if(!books){
-        return res.status(404).json({message:"No book found"})
+    if (!books) {
+        return res.status(404).json({ message: "No book found" })
     }
-    return res.status(200).json({books})
+    return res.status(200).json({ books })
 }
 
 // API to add Book to the database
-const addBook =async(req,res,next)=>{
-    const {image,name,author,description,price,category,quantity} = req.body;
+const addBook = async(req, res, next) => {
+    const { image, name, author, description, price, category, quantity } = req.body;
     let book;
-    let available= false;
-    if(quantity>0){
+    let available = false;
+    if (quantity > 0) {
         available = true
     }
-    try{
+    try {
         book = new Book({
             image,
             name,
@@ -59,25 +59,29 @@ const addBook =async(req,res,next)=>{
             available
         });
         await book.save();
-    }catch(err){ console.log(err)}
+    } catch (err) {
+        console.log(err)
 
-    if(!book){
-        return res.status(500).json({message:"Unable to add"})
+        return res.status(500).json({ message: "Unable to add" })
     }
-    return res.status(200).json({book})
+
+    if (!book) {
+        return res.status(500).json({ message: "Unable to add" })
+    }
+    return res.status(200).json({ book })
 }
 
 // API to update Book in the database
-const updateBook = async (req,res,next)=>{
-    const {name,author,description,price,category,quantity} = req.body;
-    let books 
+const updateBook = async(req, res, next) => {
+    const { name, author, description, price, category, quantity } = req.body;
+    let books
     const id = req.params.id;
-    let available= false;
-    if(quantity>0){
+    let available = false;
+    if (quantity > 0) {
         available = true
     }
     try {
-        books= await Book.findByIdAndUpdate(id,{
+        books = await Book.findByIdAndUpdate(id, {
             image,
             name,
             author,
@@ -92,30 +96,32 @@ const updateBook = async (req,res,next)=>{
     } catch (error) {
         console.log(error);
     }
-    if(!books){
-        return res.status(404).json({message:"Unable to update"})
+    if (!books) {
+        return res.status(404).json({ message: "Unable to update" })
     }
-    return res.status(200).json({books})
+    return res.status(200).json({ books })
 }
 
 
 // API to remove Book from the database
-const removeBook = async (req,res,next)=>{
-    let books 
+const removeBook = async(req, res, next) => {
+    let books
     const id = req.params.id;
     try {
-        books= await Book.findByIdAndRemove(id);
+        books = await Book.findByIdAndRemove(id);
 
     } catch (error) {
         console.log(error);
     }
-    if(!books){
-        return res.status(404).json({message:"Unable to delete"})
+    if (!books) {
+        return res.status(404).json({ message: "Unable to delete" })
     }
-    return res.status(200).json({message:"Book deleted"})
+    return res.status(200).json({ message: "Book deleted" })
 }
-module.exports = {getAllBooks,
-                    addBook,
-                    getbook,
-                    updateBook,
-                    removeBook}
+module.exports = {
+    getAllBooks,
+    addBook,
+    getbook,
+    updateBook,
+    removeBook
+}
