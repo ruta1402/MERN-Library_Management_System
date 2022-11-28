@@ -71,27 +71,27 @@ function RegistrationForm() {
         <div className="records">
         <form onSubmit={handleSubmit}> 
         <div className="form">
-            <div className='headi'>Registration Form</div>
+            <div className='headi'>Register</div>
             <div className="form-body">
                 <div className="username">
-                    <label className="form__label" for="firstName">Name: </label>
-                    <input className="form__input w3-input w3-border w3-light-grey" type="text" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name"/>
+                    {/* <label className="form__label" for="firstName">Name: </label> */}
+                    <input className="type-1" placeholder='First Name' type="text" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" />
                 </div>
                 <div className="lastname">
-                    <label className="form__label" htmlFor="phoneNo">Phone No: </label>
-                    <input  type="text" name="" id="phoneNo" value={phoneNo}  className="form__input" onChange = {(e) => handleInputChange(e)} placeholder="LastName"/>
+                    {/* <label className="form__label" htmlFor="phoneNo">Phone No: </label> */}
+                    <input  type="text" name="" id="phoneNo" value={phoneNo}  className="type-1" placeholder='Phone No.' onChange = {(e) => handleInputChange(e)} />
                 </div>
                 <div className="email">
-                    <label className="form__label" for="email">Email: </label>
-                    <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
+                    {/* <label className="form__label" for="email">Email: </label> */}
+                    <input  type="email" id="email" className="type-1" placeholder='Email' value={email} onChange = {(e) => handleInputChange(e)} />
                 </div>
                 <div className="password">
-                    <label className="form__label" for="password">Password: </label>
-                    <input className="form__input" type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} placeholder="Password"/>
+                    {/* <label className="form__label" for="password">Password: </label> */}
+                    <input className="type-1" placeholder='Password' type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} />
                 </div>
                 <div className="confirm-password">
-                    <label className="form__label" for="confirmPassword">Confirm Password: </label>
-                    <input className="form__input" type="password" id="confirmPassword" value={confirmPassword} onChange = {(e) => handleInputChange(e)} placeholder="Confirm Password"/>
+                    {/* <label className="form__label" for="confirmPassword">Confirm Password: </label> */}
+                    <input className="type-1" placeholder='Confirm Password' type="password" id="confirmPassword" value={confirmPassword} onChange = {(e) => handleInputChange(e)} />
                 </div>
                 <div className="d">
                     <input type="submit" value="Register" class="btn foote"/>

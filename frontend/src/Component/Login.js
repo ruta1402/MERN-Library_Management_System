@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import './style.css'
 // import axios from 'axios';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+  
 
 import { useNavigate } from 'react-router-dom';
 
@@ -72,32 +75,35 @@ function LoginForm() {
 
     return(
         <div className="records">
-            <form onSubmit={handleSubmit} >
-        <div className="form2">
-            <div className='headi'>Login Form</div>
-                <div className="form-body">
-                    <div className="email">
-                        <label className="form__label" htmlFor="email">Email </label>
-                        
-                        <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)}/>
-                        
-                    </div>
-                    <div className="password">
-                        <label className="form__label" htmlFor="password">Password </label>
-                        
-                        <input className="form__input" type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} />
-                    </div>
-                    <div className="d">
-                    <input type="submit" value="Login" className="btn foote"/>
-                    </div>
+           <form onSubmit={handleSubmit} >
+                <div className="form2">
+                    <div className='headi'>Login</div>
+                   
+                        <div className="form-body">
+                            <div className="email">
+                                {/* <label className="form__label" htmlFor="email">Email </label> */}
+                                
+                                <input  type="email" id="email" className="type-1" placeholder='Email' value={email} onChange = {(e) => handleInputChange(e)}/>
+                                
+                            </div>
+                            <div className="password">
+                                {/* <label className="form__label" htmlFor="password">Password </label> */}
+                                
+                                <input className="type-1" type="password"  id="password" placeholder='Password' value={password} onChange = {(e) => handleInputChange(e)} />
+                            </div>
+                            <div className="d">
+                            <input type="submit" value="Login" className="btn foote"/>
+                            </div>
+                        </div>
+                    
+                    <div className="d1">Don't have an account?<span className="Redirect" to='/Register' ><a href="/Register" className='Redirect'> Register now</a></span></div>
                 </div>
-            
-            <div className="d1">Don't have an account?<span className="Redirect" to='/Register' ><a href="/Register" className='Redirect'> Register now</a></span></div>
-        </div>
             </form>
         </div>
         
-    )       
+        
+        
+    );      
 }
 
 export default LoginForm

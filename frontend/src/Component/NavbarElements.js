@@ -9,14 +9,14 @@ export const Nav = styled.nav `
 	justify-content: space-end;
 	padding: 0.2rem;
 	z-index: 12;
-	font-size: 35px;
+	font-size: 20px;
 	
 `;
 
 export const NavLink = styled(Link)
 `
 	color: black;
-	font-family: 'Times New Roman', serif;
+	font-family: 'Trebuchet MS', sans-serif;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -47,7 +47,7 @@ export const Bars = styled(FaBars)
 
 export const UserData = styled.div `
 color: white;
-font-family: 'Times New Roman', serif;
+font-family: 'Trebuchet MS', sans-serif;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -88,7 +88,7 @@ export const NavBtnLink = styled(Link)
   border-radius: 4px;
   font-size: 18px;
   background: #225956;
-  font-family: 'Times New Roman', serif;
+  font-family: 'Trebuchet MS', sans-serif;
   color: white;
   width:100px;
   text-align:center;
@@ -97,7 +97,7 @@ export const NavBtnLink = styled(Link)
   
   &:hover {
     color: white;
-  
+	transform: scale(1.1);
   box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
   background-color: rgba(104, 85, 224, 1);
   }
@@ -107,7 +107,7 @@ export const NavBtnLink = styled(Link)
   font-weight: 600;
   margin: 0 10px;
   
-  padding: 10px 0;
+  padding: 8px 0;
   box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
   transition: 0.4s;
 `;
