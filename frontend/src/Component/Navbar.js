@@ -53,7 +53,7 @@ return (
 	<>
 	<Nav>
 		<NavMenu>
-			<NavLink className="logo" to="/" ><img src="./images/logo.png" width="100px" height="100px"/></NavLink>
+			<NavLink className="logo" to="/" ><img src="./images/logo.png" /></NavLink>
 			<NavLink to="/Books" >Books</NavLink>
 			<NavLink to="/UserDetails" >Profile </NavLink>
 			{admin?<>
