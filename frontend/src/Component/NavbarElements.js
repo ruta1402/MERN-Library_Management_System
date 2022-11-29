@@ -4,7 +4,8 @@ import styled from "styled-components";
 
 export const Nav = styled.nav `
     background: #f0fcfc;
-	
+	display: flex;
+	flex-wrap: wrap;
 	display: flex;
 	justify-content: space-end;
 	padding: 0.2rem;
@@ -46,7 +47,7 @@ export const Bars = styled(FaBars)
 `;
 
 export const UserData = styled.div `
-color: white;
+color: black;
 font-family: 'Trebuchet MS', sans-serif;
 	display: flex;
 	flex-wrap: wrap;

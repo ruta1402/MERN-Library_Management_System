@@ -53,7 +53,7 @@ return (
 	<>
 	<Nav>
 		<NavMenu>
-			<NavLink className="logo" to="/" ><img src="./images/logo.png" /></NavLink>
+			<NavLink className="logo" to="/" ><img src="./images/logo.png" width="80px" height="100px"  /></NavLink>
 			<NavLink to="/Books" >Books</NavLink>
 			<NavLink to="/UserDetails" >Profile </NavLink>
 			{admin?<>
@@ -69,8 +69,8 @@ return (
 			{state.name?
 					<>
 					<UserData>{state.name}</UserData>
-					<button onClick={logOut}>
-						log out
+					<button className="foote" onClick={logOut}>
+						Log Out
 					</button>
 					</>
 				:
