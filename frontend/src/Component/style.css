@@ -12,7 +12,7 @@
 .homeHead>p {
     background-color: #224957;
     color: #E5E5E5;
-    font-family: 'Lexend Deca';
+    font-family: 'Trebuchet MS', sans-serif;
     font-style: normal;
 }
 
@@ -82,7 +82,6 @@
     font-family: 'Trebuchet MS', sans-serif;
     width: 212px;
     height: 80px;
-    font-family: 'Lexend Deca';
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
@@ -94,7 +93,7 @@
 .AddBkformhead {
     width: 275px;
     /* height: 80px; */
-    font-family: 'Lexend Deca';
+    font-family: 'Trebuchet MS', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 64px;
@@ -113,7 +112,7 @@
     font-weight: 800;
     font-size: 2.5rem;
     text-align: center;
-    font-family: 'Patrick Hand', cursive;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
 .boxWrap {
@@ -229,7 +228,7 @@ label {
 
 .form__label {
     width: 40%;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
     text-align: left;
 }
 
@@ -301,7 +300,7 @@ label {
 
 .below_form {
     color: #4a4d4e;
-    font-family: 'Lexend Deca';
+    font-family: 'Trebuchet MS', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -326,21 +325,22 @@ label {
 }
 
 .foote {
-    background-color: #4CAF50;
+    background-color: #181c66;
+    ;
     /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    border-radius: 5px;
+    font-size: 12px;
     transition: transform 0.4s;
 }
 
 .foote:hover {
-    transform: scale(1.6);
+    transform: scale(1.1);
+    background-color: #4CAF50;
 }
 
 .foote:active {
@@ -348,7 +348,7 @@ label {
 }
 
 .Redirect {
-    font-family: 'Lexend Deca';
+    font-family: 'Trebuchet MS', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -368,7 +368,7 @@ body {
     width: 100%;
     /* display: flex;
     align-items: center; */
-    font-family: 'Lexend Deca';
+    font-family: 'Trebuchet MS', sans-serif;
     background-color: whitesmoke;
 }
 
@@ -406,15 +406,20 @@ body {
     flex-direction: row;
     width: 15%;
 }
-.contact-data{
+
+.contact-data {
     padding: 20px;
     width: 70%;
 }
-.contact-data>h2,h4{
+
+.contact-data>h2,
+h4 {
     color: #20DF7F;
     font-weight: 300;
 }
-.contact-data>h3,h5{
+
+.contact-data>h3,
+h5 {
     color: #6b976b;
 }
 
@@ -427,7 +432,6 @@ body {
     background-color: #5c5c5c;
     align-items: center;
     justify-content: space-between;
-    
     padding-bottom: 20px;
     /* background-color: white; */
 }
@@ -546,9 +550,10 @@ body {
 .retBut:hover {
     transform: scale(1.05);
 }
-.retBut:disabled{
+
+.retBut:disabled {
     background-color: #6b976b;
-    box-shadow:none;
+    box-shadow: none;
     transform: none;
 }
 
@@ -559,7 +564,6 @@ body {
     border-radius: 5px;
     object-fit: cover;
     border: 2px solid #20DF7F;
-    
 }
 
 .contact-card-second>img {
@@ -599,7 +603,7 @@ body {
 .search-bar:focus {
     transform: scale(1.1);
     width: 60%;
-    border: 3px solid #20DF7F ;
+    border: 3px solid #20DF7F;
 }
 
 .search-bar::placeholder {
@@ -610,7 +614,7 @@ body {
     font-weight: 400;
     font-size: 18px;
     color: #ffffff;
-    font-family: 'Lexend Deca';
+    font-family: 'Trebuchet MS', sans-serif;
     text-align: center;
 }
 
@@ -629,11 +633,13 @@ body {
     margin-block: 2px;
     font-size: 13px;
     color: #E5E5E5;
-    font-family: 'Lexend Deca';
+    font-family: 'Trebuchet MS', sans-serif;
     text-align: center;
 }
-.pendingBut{
-    background-color: #73ce60; /* Green */
+
+.pendingBut {
+    background-color: #73ce60;
+    /* Green */
     border: none;
     border-radius: 10px;
     color: #000000;
@@ -651,8 +657,9 @@ body {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-.pendingBut_Clicked{
-    background-color: #224957; /* Green */
+.pendingBut_Clicked {
+    background-color: #224957;
+    /* Green */
     border: none;
     border-radius: 10px;
     color: #000000;
@@ -663,8 +670,9 @@ body {
     font-size: 16px;
     margin: 40px;
     cursor: pointer;
-    border: 2px solid #73ce60; 
-    -webkit-transition-duration: 0.4s; /* Safari */
+    border: 2px solid #73ce60;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
     transition-duration: 0.2s;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }

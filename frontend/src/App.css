@@ -16,7 +16,7 @@ html {
 .logo {
     font-size: 30px;
     margin: 0.5rem 2rem;
-    font-family: 'Patrick Hand', cursive;
+    font-family: 'Trebuchet MS', sans-serif;
     border: none;
 }
 
@@ -96,7 +96,7 @@ table {
 }
 
 .headingss {
-    font-family: 'Lexend Deca';
+    font-family: 'Trebuchet MS', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 64px;
@@ -117,7 +117,7 @@ table {
 }
 
 .Headline {
-    font-family: 'Lexend Deca';
+    font-family: 'Trebuchet MS', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 64px;
@@ -215,7 +215,7 @@ table {
 }
 
 .space_head {
-    font-family: 'Lexend Deca';
+    font-family: 'Trebuchet MS', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 40px;

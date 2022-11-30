@@ -100,9 +100,9 @@ return(
         
             <div className="AddBkPg">
             
-            <div className="userFormbody">
+            <div className="formbody">
                 
-            <div className='AddBkformhead'>Details</div>
+            <div className='formhead'>Details</div>
             
 
             <div className="form-body-user">
