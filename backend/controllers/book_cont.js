@@ -41,8 +41,9 @@ const getbook = async(req, res, next) => {
 
 // API to add Book to the database
 const addBook = async(req, res, next) => {
-    const { image, name, author, description, price, category, quantity } = req.body;
+    const { image, name, author, description, category, quantity } = req.body;
     let book;
+    let price = 0;
     let available = false;
     if (quantity > 0) {
         available = true
@@ -61,7 +62,6 @@ const addBook = async(req, res, next) => {
         await book.save();
     } catch (err) {
         console.log(err)
-
         return res.status(500).json({ message: "Unable to add" })
     }
 
@@ -114,9 +114,9 @@ const removeBook = async(req, res, next) => {
         console.log(error);
     }
     if (!books) {
-        return res.status(404).json({ message: "Unable to delete" })
+        return res.status(404).json({ response: false, message: "Unable to delete" })
     }
-    return res.status(200).json({ message: "Book deleted" })
+    return res.status(200).json({ response: true, message: "Book deleted" })
 }
 module.exports = {
     getAllBooks,

@@ -43,9 +43,7 @@ const register = async(req, res, next) => {
         await user.save();
     } catch (error) {
         console.log(error);
-
         return res.status(500).json({ message: "Unable to add" })
-
     }
     if (!user) {
         return res.status(500).json({ message: "Unable to add" })
@@ -71,6 +69,7 @@ const login = async(req, res, next) => {
         })
     } catch (error) {
         console.log(error);
+        return res.status(500).json({ message: "Login failed" })
     }
     if (!user) {
         return res.status(500).json({ message: "Login failed" })
@@ -119,9 +118,9 @@ const updateUser = async(req, res, next) => {
         console.log(error);
     }
     if (!user) {
-        return res.status(404).json({ message: "Unable to update" })
+        return res.status(404).json({ response: false, message: "Unable to update" })
     }
-    return res.status(200).json({ message: "User updated" })
+    return res.status(200).json({ response: true, message: "User updated" })
 }
 
 
