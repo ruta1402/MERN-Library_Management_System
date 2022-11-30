@@ -56,8 +56,8 @@ return (
 			<NavLink to="/Books" >Books</NavLink>
 			
 			{admin?<>
-				<NavLink to="/Profile" >Issue Log</NavLink>
-				<NavLink to="/Addbook" >Add Book</NavLink>
+				<NavLink to="/Profile" >Issues</NavLink>
+				<NavLink to="/Addbook" >Add</NavLink>
 			</>:
 			<>
 			</>}

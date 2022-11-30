@@ -44,7 +44,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #20DF7F;
+    background-color: #E5E5E5;
     border-radius: 10px;
 }
 
@@ -96,10 +96,10 @@
     font-family: 'Trebuchet MS', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 64px;
+    font-size: 40px;
     line-height: 80px;
     text-align: center;
-    color: #224957;
+    color: #181c66;
 }
 
 .inl {
@@ -236,13 +236,13 @@ label {
     appearance: none;
     padding: 0px 25px;
     /* position: absolute; */
-    background-color: #585a5b;
+    background-color: #ffffff;
     width: 250px;
     height: 45px;
     border-radius: 20px;
     outline: none;
     border: 2px solid #E5E5E5;
-    color: #fbfbfb;
+    color: #000000;
     font-size: 15px;
     transition: transform 0.4s;
 }
@@ -253,7 +253,7 @@ label {
 }
 
 ::placeholder {
-    color: #FFFFFF;
+    color: #000000;
 }
 
 .form__input:focus {
@@ -268,6 +268,7 @@ label {
     color: #ffffff;
     border-radius: 20px;
     transition: transform .2s;
+    cursor: pointer;
 }
 
 .form_but:hover {
@@ -335,7 +336,8 @@ label {
     text-decoration: none;
     display: inline-block;
     font-size: 12px;
-    transition: transform 0.4s;
+    transition: transform 0.2s;
+    cursor: pointer;
 }
 
 .foote:hover {
@@ -344,7 +346,7 @@ label {
 }
 
 .foote:active {
-    transform: scale(0.1);
+    transform: scale(1.1);
 }
 
 .Redirect {
@@ -414,13 +416,13 @@ body {
 
 .contact-data>h2,
 h4 {
-    color: #20DF7F;
+    color: #181c66;
     font-weight: 300;
 }
 
 .contact-data>h3,
 h5 {
-    color: #6b976b;
+    color: #181c66;
 }
 
 .contact-card {
@@ -456,7 +458,7 @@ h5 {
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     display: flex;
-    width: 80%;
+    width: 200%;
     height: 100px;
     flex-direction: row;
     padding: 13px;
@@ -560,9 +562,8 @@ h5 {
     width: 15%;
     /* height: 250px; */
     align-self: center;
-    border-radius: 5px;
     object-fit: cover;
-    border: 2px solid #20DF7F;
+    border: 1px solid #181c66;
 }
 
 .contact-card-second>img {

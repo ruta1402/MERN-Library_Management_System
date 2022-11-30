@@ -61,7 +61,7 @@ useEffect(()=>{
             <div className="row text-center justify-content-center">
             <div className="hisPg">
                 <h3 className='headingss'>Issue History</h3>
-                <button  onClick = {()=>{setClick(!click)}} className={click?'pendingBut_Clicked':'pendingBut'}>{!click?'Pending':'Returned'}</button>
+                <button  onClick = {()=>{setClick(!click)}} className={click?'form_but':'form_but'}>{!click?'Pending':'Returned'}</button>
                 <div className="contacts-i">
                     {bookEle}   
                 </div>

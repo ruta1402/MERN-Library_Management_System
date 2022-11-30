@@ -101,7 +101,7 @@ function AddBook() {
                 </div><br/>
             </div>
                 <div className="d">
-                    <input type="submit" onClick={addbk} value="Add" className="form_but2"/>
+                    <input type="submit" onClick={addbk} value="Add" className="form_but"/>
                 </div>
             </form>
             

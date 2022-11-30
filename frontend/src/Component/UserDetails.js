@@ -118,7 +118,7 @@ return(
                 />
                 
               </div>
-              <button  className='userBut'
+              <button  className='foote'
                 onClick={editName?saveChange:()=>{setEditname(!editName)}} >
                 {editName?'Save':'Edit'}
               </button>
@@ -158,8 +158,8 @@ return(
                 />  
               </div>
               <div className='butCont'>
-              <button  className='userBut'  onClick={editPass?saveChange:()=>setEditpass(!editPass)} >{editPass?'Save':'Edit'}</button>
-              <button className='userBut' onClick={()=>{setView(!view)}} >View</button>
+              <button  className='foote'  onClick={editPass?saveChange:()=>setEditpass(!editPass)} >{editPass?'Save':'Edit'}</button>
+              <button className='foote' onClick={()=>{setView(!view)}} >View</button>
 
               </div>
               
