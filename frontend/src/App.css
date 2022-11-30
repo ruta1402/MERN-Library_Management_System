@@ -62,23 +62,30 @@ html{
   }
   
   .home{
-      /* background-image: url('./Component/books.jpg'); */
+      background-image: url('./Component/books.jpg'); 
       min-height: 100vh;
-      /* background-position: center;
+      background-position: center;
       background-repeat: no-repeat;
-      background-size: cover; */
+      background-size: cover; 
       background-color: #E5E5E5;
     }
   
-  .darkbg{
+  /* .darkbg{
       background-color: black;
       opacity: 0.7;
       color: white;
       size: 1rem;
-  }
+  } */
   
   .ko{
     padding: 2px;
+    margin-left: 2rem;
+  }
+  .koo{
+    padding: 2px;
+    margin-left: 3rem;
+    max-width: 50%;
+    font-size: 1.5rem;
   }
   
   table {
@@ -123,21 +130,21 @@ html{
   }
   
   .tabla{
-    margin: 0 auto;
-  }
+    margin: 1rem 5rem;
+  } 
   
   .tabla th{
-    border: 1px solid white;
+    border: 1px solid black;
     border-collapse: collapse;
     padding: 0.5rem;
-    color:white;
+    color:black;
     font-style: italic;
   } 
   .tabla td{
-    border: 1px solid white;
+    border: 1px solid black;
     border-collapse: collapse;
     padding: 0.5rem;
-    color:white;
+    color:black;
     font-style: italic;
   }
   
