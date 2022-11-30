@@ -60,7 +60,7 @@ const Books = () => {
         <div className="container sma">
         <div className="row">
             <div className="col-12-book">
-            <h3 align="center" className='headingss'>List of All books</h3>
+            <h3 align="center" className='headingss'>All Books</h3>
             <div className="search">
             <input className='search-bar' placeholder="Search Book" onChange={event => setQuery(event.target.value)} />
             </div>

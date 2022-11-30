@@ -103,7 +103,8 @@ table {
     line-height: 80px;
     margin: 0px;
     text-align: center;
-    color: #224957;
+    color: #181c66;
+    ;
 }
 
 .full {
@@ -176,7 +177,7 @@ table {
 }
 
 .records {
-    background: #E5E5E5;
+    background: #ffffff;
     margin-top: 0;
     padding: 20px;
     padding-top: 45px;

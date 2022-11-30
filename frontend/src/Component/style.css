@@ -425,11 +425,10 @@ h5 {
 
 .contact-card {
     flex-basis: 225px;
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     padding: 13px;
-    background-color: #5c5c5c;
+    background-color: #E5E5E5;
     align-items: center;
     justify-content: space-between;
     padding-bottom: 20px;
@@ -588,32 +587,27 @@ h5 {
     width: 30%;
     padding: 0px 25px;
     height: 40px;
-    border-radius: 10px;
-    background-color: #224957;
+    background-color: #E5E5E5;
     box-sizing: border-box;
     outline: none;
-    border: 3px solid #224957;
+    border: 1px solid #181c66;
     -webkit-transition: 0.5s;
     transition: 0.3s;
     margin: 50px 0px;
     font-weight: 200;
-    color: #E5E5E5;
+    color: black;
 }
 
 .search-bar:focus {
     transform: scale(1.1);
     width: 60%;
-    border: 3px solid #20DF7F;
-}
-
-.search-bar::placeholder {
-    color: #E5E5E5;
+    border: 1px solid #181c66;
 }
 
 .contact-card>h3 {
-    font-weight: 400;
+    font-weight: bold;
     font-size: 18px;
-    color: #ffffff;
+    color: #181c66;
     font-family: 'Trebuchet MS', sans-serif;
     text-align: center;
 }
@@ -622,6 +616,7 @@ h5 {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #181c66;
 }
 
 .info-group>img {
@@ -632,7 +627,7 @@ h5 {
 .info-group>p {
     margin-block: 2px;
     font-size: 13px;
-    color: #E5E5E5;
+    color: #181c66;
     font-family: 'Trebuchet MS', sans-serif;
     text-align: center;
 }
@@ -700,4 +695,21 @@ h5 {
 .butCont {
     display: flex;
     justify-content: space-evenly;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(2, 2, 2);
+    opacity: 1;
+    /* Firefox */
+}
+
+ :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgb(0, 0, 0);
+}
+
+ ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: rgb(12, 12, 12);
 }

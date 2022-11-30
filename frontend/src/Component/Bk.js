@@ -41,6 +41,7 @@ export default function Bk(props) {
             <div className="contact-card">
                 <img src={image} />
                 <h3>{name}</h3>
+                
                 <div className="info-group">
                     <p>Author: {author}</p>
                 </div>
@@ -50,7 +51,7 @@ export default function Bk(props) {
                 <div className="info-group">
                     <p>Copies {qunatData.quan}</p>
                 </div>
-                <button className="issBut"
+                <button className="foote"
                     disabled={!qunatData.aval} 
                     onClick={issueBk} 
                 >
