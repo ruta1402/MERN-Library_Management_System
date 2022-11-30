@@ -74,12 +74,13 @@ function LoginForm() {
     return(
         <div className="backGrid">
         
-        <center>Library Management System</center> 
+        
            
             <form onSubmit={handleSubmit} >
         <div className="formBody">
-            
+        
             <div className='formhead'>Login</div>
+            <center>Library Management System</center> 
                 <div className="form-body">
                     <div className="email">
                         
