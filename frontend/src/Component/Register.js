@@ -75,7 +75,7 @@ function RegistrationForm() {
 
     return(
         <div className="backGrid">
-             
+         <center>Library Management System</center>    
       
         <form onSubmit={handleSubmit}> 
         <div className="formBody">
@@ -87,7 +87,7 @@ function RegistrationForm() {
                 </div>
                 <div className="lastname">
                     
-                    <input  type="text" name="" id="phoneNo" value={phoneNo}  className="form__input" onChange = {(e) => handleInputChange(e)} placeholder="LastName"/>
+                    <input  type="text" name="" id="phoneNo" value={phoneNo}  className="form__input" onChange = {(e) => handleInputChange(e)} placeholder="Last Name"/>
                 </div>
                 <div className="email">
                     
