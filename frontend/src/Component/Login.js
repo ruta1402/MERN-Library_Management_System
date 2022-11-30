@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import './style.css'
 // import axios from 'axios';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-  
+
 
 import { useNavigate } from 'react-router-dom';
 
@@ -62,8 +60,8 @@ function LoginForm() {
         const data = await response.json()
         if(data.tokenid){
             localStorage.clear()
-            localStorage.setItem('token',data.tokenid)
-            alert("login successful");
+            localStorage.setItem('token',data.tokenid);
+           
             console.log(data);
             navigate('/')
         }
@@ -74,36 +72,32 @@ function LoginForm() {
     }
 
     return(
-        <div className="records">
-           <form onSubmit={handleSubmit} >
-                <div className="form2">
-                    <div className='headi'>Login</div>
-                   
-                        <div className="form-body">
-                            <div className="email">
-                                {/* <label className="form__label" htmlFor="email">Email </label> */}
-                                
-                                <input  type="email" id="email" className="type-1" placeholder='Email' value={email} onChange = {(e) => handleInputChange(e)}/>
-                                
-                            </div>
-                            <div className="password">
-                                {/* <label className="form__label" htmlFor="password">Password </label> */}
-                                
-                                <input className="type-1" type="password"  id="password" placeholder='Password' value={password} onChange = {(e) => handleInputChange(e)} />
-                            </div>
-                            <div className="d">
-                            <input type="submit" value="Login" className="btn foote"/>
-                            </div>
-                        </div>
-                    
-                    <div className="d1">Don't have an account?<span className="Redirect" to='/Register' ><a href="/Register" className='Redirect'> Register now</a></span></div>
+        <div className="backGrid">
+   
+        <form onSubmit={handleSubmit} >
+        <div className="formBody">
+            <div className='formhead'>Sign In</div>
+                <div className="form-body">
+                    <div className="email">
+                        
+                        <input  type="email" placeholder='Email' id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)}/>
+                        
+                    </div>
+                    <div className="password">  
+                        
+                        <input className="form__input" placeholder='password' type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} />
+                    </div>
+                    <div className="d">
+                    <input type="submit" value="Login" className="form_but"/>
+                    </div>
                 </div>
+            
+            <div className="below_form">Don't have an account?<span className="Redirect" to='/Register' ><a href="/Register" className='Redirect'> Register now</a></span></div>
+        </div>
             </form>
         </div>
         
-        
-        
-    );      
+    )       
 }
 
 export default LoginForm

@@ -1,18 +1,24 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
+
 import './style.css';
 // import { Route } from 'react-router-dom';
 import { NavLink } from './NavbarElements';
-// import LoginForm from './Login';
+
 import { useNavigate } from 'react-router-dom';
 
 function RegistrationForm() {
+
     const navigate = useNavigate();
     const [firstName, setFirstName] = useState(null);
     const [phoneNo, setPhoneNo] = useState(null);
     const [email, setEmail] = useState(null);
     const [password,setPassword] = useState(null);
     const [confirmPassword,setConfirmPassword] = useState(null);
-
+    const [error,setError] = useState(false)
+    const [success,setSuccess] = useState(0)
+    useEffect(() => {
+        document.body.classList.toggle("body-noscroll-class");
+      }, [error]);
     const handleInputChange = (e) => {
         const {id , value} = e.target;
         if(id === "firstName"){
@@ -36,9 +42,9 @@ function RegistrationForm() {
         console.log(firstName,phoneNo,email,password,confirmPassword);
         event.preventDefault()
         if(password!==confirmPassword){
-            alert("Wrong")
+            alert("Wrong Password")
             return false
-        } 
+        }
         // const options = ;
         console.log(email,phoneNo,password);
         const response= await fetch('http://localhost:8989/user/register',{
@@ -58,50 +64,52 @@ function RegistrationForm() {
         console.log(data)
         if(data.tokenid){
             localStorage.clear()
-            localStorage.setItem('token',data.tokenid)
-            alert("Registration successful");
+            localStorage.setItem('token',data.tokenid);
+            alert("Registered")
             navigate('/')
         }
         else{
-            alert("Please check email and pass")
+            alert("Check Sign up credentials")
         }
     }
 
     return(
-        <div className="records">
+        <div className="backGrid">
+             
+      
         <form onSubmit={handleSubmit}> 
-        <div className="form">
-            <div className='headi'>Register</div>
+        <div className="formBody">
+            <div className='formhead'>Sign Up</div>
             <div className="form-body">
                 <div className="username">
-                    {/* <label className="form__label" for="firstName">Name: </label> */}
-                    <input className="type-1" placeholder='First Name' type="text" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" />
+                    
+                    <input className="form__input w3-input w3-border w3-light-grey" type="text" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name"/>
                 </div>
                 <div className="lastname">
-                    {/* <label className="form__label" htmlFor="phoneNo">Phone No: </label> */}
-                    <input  type="text" name="" id="phoneNo" value={phoneNo}  className="type-1" placeholder='Phone No.' onChange = {(e) => handleInputChange(e)} />
+                    
+                    <input  type="text" name="" id="phoneNo" value={phoneNo}  className="form__input" onChange = {(e) => handleInputChange(e)} placeholder="LastName"/>
                 </div>
                 <div className="email">
-                    {/* <label className="form__label" for="email">Email: </label> */}
-                    <input  type="email" id="email" className="type-1" placeholder='Email' value={email} onChange = {(e) => handleInputChange(e)} />
+                    
+                    <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
                 </div>
                 <div className="password">
-                    {/* <label className="form__label" for="password">Password: </label> */}
-                    <input className="type-1" placeholder='Password' type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} />
+                    
+                    <input className="form__input" type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} placeholder="Password"/>
                 </div>
                 <div className="confirm-password">
-                    {/* <label className="form__label" for="confirmPassword">Confirm Password: </label> */}
-                    <input className="type-1" placeholder='Confirm Password' type="password" id="confirmPassword" value={confirmPassword} onChange = {(e) => handleInputChange(e)} />
+                    
+                    <input className="form__input" type="password" id="confirmPassword" value={confirmPassword} onChange = {(e) => handleInputChange(e)} placeholder="Confirm Password"/>
                 </div>
                 <div className="d">
-                    <input type="submit" value="Register" class="btn foote"/>
+                    <input type="submit" value="Register" class="form_but"/>
                 </div>
             </div>
             {/* <div class="d">
                 <button onClick={()=>handleSubmit()} type="submit" class="btn foote">Register</button>
             </div> */}
             <br />
-            <div class="d1">Already have an account?<span  ><a href="/Login" className='Redirect'> Login</a></span></div>
+            <div class="below_form">Already have an account?<span  ><a href="/Login" className='Redirect'> Login</a></span></div>
         </div>
         </form>
         </div>

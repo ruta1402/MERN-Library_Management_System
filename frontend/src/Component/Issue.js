@@ -9,7 +9,6 @@ export default function Issue(props){
     const dDate = dueDate.split('T')[0]
     const[returnCheck,setRtnChk] = useState(returned)
     async  function issueBk(){
-    
         const resp  = await fetch(`http://localhost:8989/issue/retBook/${_id}`)
         const data =  await resp.json()
         console.log(data)
@@ -27,9 +26,9 @@ export default function Issue(props){
                     <h3>Due Date: {dDate}</h3>
                 </div>
                 <h3>{returnCheck?
-                    <>Returned</>
+                    <><button className="retBut" disabled={true} >Returned</button></>
                     :
-                    <><button onClick={issueBk} >Book return</button></>
+                    <><button className="retBut" onClick={issueBk} >Book return</button></>
                 }</h3>
                 
             </div>

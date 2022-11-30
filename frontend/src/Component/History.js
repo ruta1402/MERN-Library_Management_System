@@ -5,7 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import jwt from 'jsonwebtoken'
 import Issue from './Issue';
 
-    const History = () => {
+const History = () => {
+    const [click,setClick] = useState(false)
+
+    
+
   const navigate = useNavigate();
     async function getBooks(id){
 
@@ -39,26 +43,28 @@ import Issue from './Issue';
 
 useEffect(()=>{
     if(userd){
-        // console.log(userd);
+        console.log(userd);
         getBooks(userd)
     }
-},[userd])
+},[userd,click])
 
         let i =0
         const bookEle = bookData.map(book=>{
             i+=1
-             return <Issue data = {book} key ={i} sr ={i} />
+            console.log(click === book.returned);
+             return( (click === book.returned) && <Issue data = {book} key ={i} sr ={i} />)
             
             })
   return (
     <div className='records'>
     <div className="mt-6 text-center align-self-center full sma">
             <div className="row text-center justify-content-center">
-            <div className="col-12">
+            <div className="hisPg">
                 <h3 className='headingss'>Issue History</h3>
+                <button  onClick = {()=>{setClick(!click)}} className={click?'pendingBut_Clicked':'pendingBut'}>{!click?'Pending':'Returned'}</button>
                 <div className="contacts-i">
-            {bookEle}   
-            </div>
+                    {bookEle}   
+                </div>
             </div>
             </div>
             </div>

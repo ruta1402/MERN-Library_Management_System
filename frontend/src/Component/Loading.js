@@ -6,6 +6,8 @@ import AllIss from './AllIss';
 
 function Log() {
     const navigate = useNavigate();
+    const [userd,setUserd] = useState('')
+    const [click,setClick] = useState(false)
     const [issues,setIssues] = useState([])
     async function getisss(){
 
@@ -30,21 +32,31 @@ function Log() {
                 alert('only admin can access')
                 localStorage.removeItem('token')
                 navigate('/login')
+            }else{
+                setUserd(user.user._id)
             }
             
         }
     }else{
         navigate('/login')
     }
-    getisss()
+    
 
     
 
     },[])
+
+    useEffect(()=>{
+        if(userd){
+
+            getisss()
+        }
+        
+    },[userd,click])
     let i =0
     const issElelement = issues.map(iss=>{
         i+=1
-        return <AllIss data = {iss} key ={i} />
+        return((click === iss.returned) &&  <AllIss data = {iss} key ={i} />)
         
         })
     
@@ -54,8 +66,9 @@ function Log() {
         <div className='records'>
             <div className="mt-6 text-center align-self-center full">
                 <div className="row text-center justify-content-center">
-                <div className="col-15">
+                <div className="hisPg">
                 <br /><br /><h3 className='headingss'>Issue Log</h3>
+                <button  onClick = {()=>{setClick(!click)}} className={click?'pendingBut_Clicked':'pendingBut'}>{!click?'Pending':'Returned'}</button>
                 <div className="contacts-i">
                 {issElelement}
                 </div>

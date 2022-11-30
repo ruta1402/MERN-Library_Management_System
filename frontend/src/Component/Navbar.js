@@ -1,10 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Nav, NavLink, NavMenu,NavBtnLink, NavBtn,UserData } from "./NavbarElements";
+import { Nav, NavLink, NavMenu,NavBtnLink, NavBtn,UserData,NavLink1 } from "./NavbarElements";
 import jwt from 'jsonwebtoken';
 import Context from "../store/Context";
 import { useNavigate } from 'react-router-dom';
-import './style.css'
-import Button from 'react-bootstrap/Button';
 
 
 const Navbar = () => {
@@ -14,8 +12,8 @@ const Navbar = () => {
 	const [admin, setAdmin] = useState(false)
 	const [username,setUser] = useState('')
 	
-	
-	console.log(state.name);
+	// console.log(username);
+	// console.log(state.name);
 	useEffect(()=>{
 		const token = localStorage.getItem('token')
 		
@@ -33,7 +31,7 @@ const Navbar = () => {
 				if(userdata.user.admin==true){
 					setAdmin(true)
 				}
-				// console.log(userdata.user.admin);
+				console.log(userdata.user.admin);
 			}
 			
 		}
@@ -51,13 +49,14 @@ const Navbar = () => {
 return (
 	
 	<>
+	{state.name &&
 	<Nav>
 		<NavMenu>
-			<NavLink className="logo" to="/" ><img src="./images/logo.png" width="80px" height="100px"  /></NavLink>
+			<NavLink1 className="logo" to="/" >Book Store</NavLink1>
 			<NavLink to="/Books" >Books</NavLink>
-			<NavLink to="/UserDetails" >Profile </NavLink>
+			
 			{admin?<>
-				<NavLink to="/Profile" >Profile</NavLink>
+				<NavLink to="/Profile" >Issue Log</NavLink>
 				<NavLink to="/Addbook" >Add Book</NavLink>
 			</>:
 			<>
@@ -68,22 +67,23 @@ return (
 		<NavBtn>
 			{state.name?
 					<>
-					<UserData>{state.name}</UserData>
-					<button className="foote" onClick={logOut}>
-						Log Out
+					<NavLink to="/UserDetails" >{state.name}</NavLink>
+					<button
+					className="logBut"
+					onClick={logOut}>
+						log out
 					</button>
 					</>
 				:
 					<>
-				<NavBtnLink  to='/Login'>Login</NavBtnLink>
-				<NavBtnLink  to='/Register' >Register</NavBtnLink>
+				
 					</> 
 			}
         </NavBtn>
 	</Nav>
+}
 	</>
 );
-
 };
 
 export default Navbar;

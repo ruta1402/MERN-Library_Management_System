@@ -69,39 +69,39 @@ function AddBook() {
 
  return (
     
-    <div className='records'>
-        <div className="form3">
-            <div className='headi'>Add Book to Library</div><br/>
+    <div className='AddBkPg'>
+        <div className="BookFormbody">
+            <div className='AddBkformhead'>Add Book</div><br/>
             <form>
 
             <div className="form-body">
                 <div className="inl">
-                    <label className="form__label" htmlFor="imgLink">Book Image: </label>
-                    <input className="form__input" onChange = {(e) => handleInputChange(e)} value={imgLink} type="text" id="imgLink"/>
+                    
+                    <input className="form__input"  onChange = {(e) => handleInputChange(e)} value={imgLink} type="text" id="imgLink" placeholder='Image link'/>
                 </div>
                 <div className="inl">
-                    <label className="form__label" htmlFor="BName">Name of Book: </label>
-                    <input className="form__input" onChange = {(e) => handleInputChange(e)} value={BName} type="text" id="BName"/>
+                    
+                    <input className="form__input" onChange = {(e) => handleInputChange(e)} value={BName} type="text" id="BName" placeholder='Book Name'/>
                 </div>
                 <div className="inl">
-                    <label className="form__label" htmlFor="AName">Author's Name: </label>
-                    <input  type="text" name="" onChange = {(e) => handleInputChange(e)} id="AName" value={AName} className="form__input"/>
-                </div><br/>
-                <div className="inl">
-                    <label className="form__label" htmlFor="password">Description: </label>
-                    <textarea className="form__input" onChange = {(e) => handleInputChange(e)} name="" value={desription} id="desription" cols="50" rows="5"></textarea>
+                    
+                    <input  type="text" name="" onChange = {(e) => handleInputChange(e)} id="AName" value={AName} className="form__input" placeholder='Author name'/>
                 </div>
                 <div className="inl">
-                    <label className="form__label" htmlFor="Cat">Category: </label>
-                    <input className="form__input" onChange = {(e) => handleInputChange(e)} type="text" value={Cat} id="Cat"/>
+                   
+                    <input type="text"  className="form__input" placeholder='Description' onChange = {(e) => handleInputChange(e)} name="" value={desription} id="desription" cols="50" rows="5"></input >
                 </div>
                 <div className="inl">
-                    <label className="form__label" htmlFor="quantity">No. of Copies: </label>
-                    <input  type="number" value={quantity} onChange = {(e) => handleInputChange(e)} step="1" min={0} name="" id="quantity" className="form__input"/>
+                    
+                    <input className="form__input" placeholder='Category' onChange = {(e) => handleInputChange(e)} type="text" value={Cat} id="Cat"/>
+                </div>
+                <div className="inl">
+                    
+                    <input  type="number" value={quantity} placeholder='Quantity' onChange = {(e) => handleInputChange(e)} step="1" min={0} name="" id="quantity" className="form__input"/>
                 </div><br/>
             </div>
                 <div className="d">
-                    <input type="submit" onClick={addbk} value="Add" className="btn foote"/>
+                    <input type="submit" onClick={addbk} value="Add" className="form_but2"/>
                 </div>
             </form>
             
