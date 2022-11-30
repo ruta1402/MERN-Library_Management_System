@@ -369,28 +369,26 @@ body {
     width: 15%;
 }
 .contact-data{
-    padding: 20px;
+    padding: 10px;
     width: 70%;
     
 }
 .contact-data>h2,h4{
-    color: #20DF7F;
+    color: #000000;
     font-weight: 300;
 }
 .contact-data>h3,h5{
-    color: #6b976b;
+    color: #4c00ff;
 }
 .contact-card {
     flex-basis: 225px;
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     padding: 13px;
-    background-color: #224957;
+    background-color: #5c5c5c;
     align-items: center;
     justify-content: space-between;
-    
     padding-bottom: 20px;
     /* background-color: white; */
 }
@@ -419,7 +417,7 @@ body {
     flex-direction: row;
     padding: 13px;
     padding-bottom: 20px;
-    background-color: #224957;
+    background-color: #ffffff;
 }
 .contact-card-second {
     flex-basis: 225px;
@@ -431,23 +429,21 @@ body {
     flex-direction: row;
     padding: 13px;
     padding-bottom: 20px;
-    background-color: #224957;
+    background-color: #ffffff;
 }
 .contact-card > img {
     width: 100%;
     height: 250px;
     align-self: center;
-    border-radius: 5px;
     object-fit: cover;
-    border: 2px solid #20DF7F;
 }
 .issBut{
     margin: 5px 0px;
     width: 200px;
     height: 45px;
-    background-color: #20DF7F;
+    background-color: #3c39f3;
     border: none;
-    color: #224957;
+    color: #000000;
     border-radius: 10px;
     box-shadow: 1px 1px 8px rgb(0 0 0 / 50%);
     transition: ease-in 0.2s;
@@ -479,9 +475,9 @@ body {
 .retBut{
     width: 100%;
     height: 45px;
-    background-color: #20DF7F;
+    background-color: #3c39f3;
     border: none;
-    color: #224957;
+    color: #000000;
     border-radius: 10px;
     box-shadow: 1px 1px 8px rgb(0 0 0 / 50%);
     transition: ease-in 0.2s;
@@ -501,7 +497,7 @@ body {
     transform: scale(1.05);
 }
 .retBut:disabled{
-    background-color: #6b976b;
+    background-color: #59558d;
     box-shadow:none;
     transform: none;
     
@@ -511,18 +507,13 @@ body {
     width: 15%;
     /* height: 250px; */
     align-self: center;
-    border-radius: 5px;
-    object-fit: cover;
-    border: 2px solid #20DF7F;
-    
+    object-fit: cover;  
 }
 .contact-card-second > img {
     width: 15%;
     /* height: 250px; */
     align-self: center;
-    border-radius: 5px;
     object-fit: cover;
-    border: 2px solid #20DF7F;
 }
 
 .col-12-book{
@@ -551,8 +542,7 @@ body {
 }
 .search-bar:focus{
     transform: scale(1.1);
-    width: 60%;
-    border: 3px solid #20DF7F ;
+    width: 30%;
 }
 .search-bar::placeholder{
     color: #E5E5E5;
@@ -561,7 +551,7 @@ body {
 .contact-card > h3 {
     font-weight: 400;
     font-size: 18px;
-    color: #E5E5E5;
+    color: #ffffff;
     font-family: 'Lexend Deca';
     text-align: center;
 }
@@ -586,10 +576,10 @@ body {
     text-align: center;
 }
 .pendingBut{
-    background-color: #73ce60; /* Green */
+    background-color: #3c39f3; /* Green */
     border: none;
     border-radius: 10px;
-    color: #224957;
+    color: #000000;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -605,18 +595,17 @@ body {
 }
 
 .pendingBut_Clicked{
-    background-color: #224957; /* Green */
+    background-color: #3c39f3; /* Green */
     border: none;
     border-radius: 10px;
-    color: #73ce60;
+    color: #000000;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 40px;
-    cursor: pointer;
-    border: 2px solid #73ce60; 
+    cursor: pointer; 
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.2s;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
