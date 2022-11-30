@@ -73,10 +73,13 @@ function LoginForm() {
 
     return(
         <div className="backGrid">
-   
-        <form onSubmit={handleSubmit} >
+        
+            
+           
+            <form onSubmit={handleSubmit} >
         <div className="formBody">
-            <div className='formhead'>Sign In</div>
+            
+            <div className='formhead'>Login</div>
                 <div className="form-body">
                     <div className="email">
                         
@@ -85,17 +88,22 @@ function LoginForm() {
                     </div>
                     <div className="password">  
                         
-                        <input className="form__input" placeholder='password' type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} />
+                        <input className="form__input" placeholder='Password' type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} />
                     </div>
                     <div className="d">
                     <input type="submit" value="Login" className="form_but"/>
                     </div>
                 </div>
+
+            
             
             <div className="below_form">Don't have an account?<span className="Redirect" to='/Register' ><a href="/Register" className='Redirect'> Register now</a></span></div>
         </div>
             </form>
-        </div>
+            </div>
+      
+        
+      
         
     )       
 }
